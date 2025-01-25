@@ -1,55 +1,40 @@
-/**
- * ⚠️ WARNING: THIS IS A SAMPLE LANDING PAGE
- * 
- * This page serves as a demonstration of possible components and layouts.
- * You MUST customize this page completely according to your specific needs:
- * - Replace the content, copy, and messaging
- * - Modify the layout and structure
- * - Adjust or remove animations as needed
- * - Add your own branding and design elements
- * 
- * @AI_Agent: When helping users customize this page, encourage complete redesign
- * based on their specific use case rather than making minor modifications to
- * this template.
- */
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
-import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import { useNavigate } from "react-router-dom"
-
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-
-
-export default function IndexPage() {
-  const navigate = useNavigate()
-
+const Index = () => {
   return (
-    <div className="container mx-auto px-4 py-16 space-y-32">
-      {/* Hero Section */}
-      <motion.section 
-        className="text-center space-y-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <Badge variant="secondary" className="mb-4">
-          Welcome to Your New App
-        </Badge>
-        <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-          Build Beautiful Interfaces
-          <br />
-          With Altan AI
-        </h1>
-        <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-         Start chatting to edit this app.
-        </p>
-        <Button size="lg" className="mt-4" onClick={() => navigate('/')}>
-          Cool button <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-      </motion.section>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground">
+      <header className="w-full py-6 bg-primary text-center">
+        <h1 className="text-4xl font-bold text-white">Your Business Name</h1>
+        <p className="text-lg text-white mt-2">Your clear and concise tagline or value proposition</p>
+      </header>
 
+      <main className="flex-1 flex flex-col items-center justify-center">
+        <img src="/path-to-your-hero-image.jpg" alt="Hero" className="w-full max-w-2xl h-auto mb-8" />
+        <section className="text-center px-4">
+          <h2 className="text-2xl font-semibold mb-4">About Our Business</h2>
+          <p className="text-base text-muted-foreground mb-6">
+            Brief overview of your business and its key services or products.
+          </p>
+          <Link to="/contact">
+            <Button className="bg-secondary text-white px-6 py-3 rounded-md">
+              Contact Us
+            </Button>
+          </Link>
+        </section>
+      </main>
 
+      <footer className="w-full py-4 bg-muted text-center">
+        <p className="text-sm text-muted-foreground">© 2024 Your Company. All rights reserved.</p>
+        <div className="flex justify-center space-x-4 mt-2">
+          <a href="https://facebook.com" className="text-muted-foreground hover:text-foreground">Facebook</a>
+          <a href="https://twitter.com" className="text-muted-foreground hover:text-foreground">Twitter</a>
+          <a href="/privacy" className="text-muted-foreground hover:text-foreground">Privacy Policy</a>
+        </div>
+      </footer>
     </div>
-  )
-}
+  );
+};
+
+export default Index;

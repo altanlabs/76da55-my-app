@@ -28,7 +28,7 @@ const App = () => {
                 <Routes>
                   <Route
                     path="/"
-                    element={<Layout showSidebar={false} showHeader={false} showFooter={false} />}
+                    element={<Layout showSidebar={false} showHeader={true} showFooter={true} />}
                   >
                     <Route index element={<Index />} />
                     <Route path="*" element={<NotFound />} />
